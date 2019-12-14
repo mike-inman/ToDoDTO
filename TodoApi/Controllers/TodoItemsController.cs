@@ -27,7 +27,7 @@ namespace TodoApi.Controllers
 
         // GET: api/TodoItems/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<TodoItem>> GetTodoItem(long id)
+        public async Task<ActionResult<TodoItemInput>> GetTodoItem(long id)
         {
             var  td = await _context.TodoItems
                                   .Where(x => x.Id == id)
@@ -39,7 +39,7 @@ namespace TodoApi.Controllers
                 return NotFound();
             }
 
-            return new TodoItem
+            return new TodoItemInput
             {
                 Id = td.Id,
                 Name = td.Name,
