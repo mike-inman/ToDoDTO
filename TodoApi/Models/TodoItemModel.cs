@@ -1,6 +1,6 @@
 ﻿namespace TodoApi.Models
 {
-    public class TodoItemInput
+    public class TodoItemModel
     {
         public long Id { get; set; }
         public string Name { get; set; }
